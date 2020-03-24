@@ -8,4 +8,12 @@ def extract_source(url):
     source = requests.get(linkedIn).content
     return source
 
-print (extract_source(linkedIn))
+def extract_data(source):
+    soup = BeautifulSoup(source, html5lib)
+    names = soup.findAll('title')
+    return names
+
+source = extract_source(linkedIn)
+jobs = extract_data(source)
+print (jobs)
+
