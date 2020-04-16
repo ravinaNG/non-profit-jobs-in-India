@@ -1,7 +1,7 @@
-import requests
+import requests # python module for sending all kind of http requests.
 from bs4 import BeautifulSoup # python librery to pull out data from 
 import html5lib # pure python library for parshing markup into html
-from pprint import pprint 
+from pprint import pprint # "pretty print" data structures in a well-formate and in more readable way
 
 url = "https://www.naukri.com/non-profit-jobs"
 linkedIn = "https://in.linkedin.com/jobs/nonprofit-jobs?currentJobId=1797022549&position=1&pageNum=0"
@@ -14,7 +14,7 @@ def extract_source_data(source):
 def selecting_some_data(whole_data):
     # main_data = {}
     home_page = whole_data.find('div', {'class':'results__container results__container--two-pane'})
-    job_link_list = home_page.findAll('a', {'class':'result-card__full-card-link'})
+    job_link_list = home_page.findAll('a', {'class':'result-card__full-card-link'}).get_text
     return job_link_list
 
 

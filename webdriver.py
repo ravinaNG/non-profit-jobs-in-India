@@ -25,7 +25,7 @@ while True:
     last_height = new_height
 
 # print (driver)
-data = extract_source_data(driver)
+data = extract_source_data(driver.page_source)
 selected_data = selecting_some_data(data)
 pprint (selected_data) 
 
